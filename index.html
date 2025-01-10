@@ -5,20 +5,25 @@
 </head>
 <body>
     <h1>Comments Section</h1>
-    <div id="disqus_thread"></div>
-    <script>
-        var disqus_config = function () {
-            this.page.url = window.location.href; // Dynamically set the URL
-            this.page.identifier = window.location.pathname; // Dynamically set the identifier
-        };
+<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+        // Dynamically set the page URL
+        this.page.url = window.location.href;
 
-        (function() { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-            s.src = 'https://andoysblog.disqus.com/embed.js'; // Replace 'andoysblog' with your Disqus shortname
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        // Dynamically set a unique identifier for each page
+        this.page.identifier = window.location.pathname; // Use the page's pathname as identifier
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://andoysblog.disqus.com/embed.js'; // Replace 'andoysblog' with your Disqus shortname
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>
+    Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
 </body>
 </html>
